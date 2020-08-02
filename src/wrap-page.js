@@ -4,27 +4,24 @@ import { withPrefix } from "gatsby"
 import { IntlProvider } from "react-intl"
 import { IntlContextProvider } from "./intl-context"
 
+import "@formatjs/intl-pluralrules/polyfill"
+import "@formatjs/intl-relativetimeformat/polyfill"
+
+import "@formatjs/intl-pluralrules/dist/locale-data/de"
+import "@formatjs/intl-pluralrules/dist/locale-data/pl"
+import "@formatjs/intl-pluralrules/dist/locale-data/en"
+import "@formatjs/intl-pluralrules/dist/locale-data/pt"
+import "@formatjs/intl-pluralrules/dist/locale-data/nl"
+
+import "@formatjs/intl-relativetimeformat/dist/locale-data/de"
+import "@formatjs/intl-relativetimeformat/dist/locale-data/pl"
+import "@formatjs/intl-relativetimeformat/dist/locale-data/en"
+import "@formatjs/intl-relativetimeformat/dist/locale-data/pt"
+import "@formatjs/intl-relativetimeformat/dist/locale-data/nl"
+
 const preferDefault = m => (m && m.default) || m
 
-const polyfillIntl = language => {
-  const locale = language.split("-")[0]
-  try {
-    if (!Intl.PluralRules) {
-      require("@formatjs/intl-pluralrules/polyfill")
-      require(`@formatjs/intl-pluralrules/dist/locale-data/${locale}`)
-    }
-
-    if (!Intl.RelativeTimeFormat) {
-      require("@formatjs/intl-relativetimeformat/polyfill")
-      require(`@formatjs/intl-relativetimeformat/dist/locale-data/${locale}`)
-    }
-  } catch (e) {
-    throw new Error(`Cannot find react-intl/locale-data/${language}`)
-  }
-}
-
 const withIntlProvider = (intl) => children => {
-  polyfillIntl(intl.language)
   return (
     <IntlProvider
       locale={intl.language}
