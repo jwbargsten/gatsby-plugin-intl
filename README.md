@@ -4,7 +4,7 @@ Internationalize your Gatsby site.
 
 ## Features
 
-- Turn your gatsby site into an internationalization-framework out of the box powered by [react-intl](https://github.com/yahoo/react-intl). 
+- Turn your gatsby site into an internationalization-framework out of the box powered by [react-intl](https://github.com/yahoo/react-intl).
 
 - Support automatic redirection based on the user's preferred language in browser provided by [browser-lang](https://github.com/wiziple/browser-lang).
 
@@ -25,6 +25,10 @@ Source: [https://github.com/wiziple/gatsby-plugin-intl/tree/master/examples/gats
 
 - [https://picpick.app](https://picpick.app)
 - [https://www.krashna.nl](https://www.krashna.nl) [(Source)](https://github.com/krashnamusika/krashna-site)
+- [https://vaktija.eu](https://vaktija.eu)
+- [https://anhek.dev](https://anhek.dev) [(Source)](https://github.com/anhek/anhek-portfolio)
+- [https://pkhctech.ineo.vn](https://pkhctech.ineo.vn) [(Source)](https://github.com/hoangbaovu/gatsby-pkhctech)
+- [https://www.neonlaw.com](https://www.neonlaw.com) [(Source)](https://github.com/neonlaw/interface)
 
 *Feel free to send us PR to add your project.*
 
@@ -117,7 +121,7 @@ export default IndexPage
 Let's say you have two pages (`index.js` and `page-2.js`) in your `pages` directory. The plugin will create static pages for every language.
 
 file | English | Korean | German | Default*
--- | -- | -- | -- | -- 
+-- | -- | -- | -- | --
 src/pages/index.js | /**en** | /**ko** | /**de** | /
 src/pages/page-2.js | /**en**/page-2 | /**ko**/page-2 | /**de**/page-2 | /page-2
 
